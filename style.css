@@ -8,7 +8,7 @@
 
 body {
 	margin: 0;
-	background: url(/assets/img/background.jpg);
+	background: url(./assets/img/background.jpg);
 	overflow-x: hidden;
 }
 
