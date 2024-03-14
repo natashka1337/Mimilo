@@ -9,6 +9,7 @@
 body {
 	margin: 0;
 	background: url(/assets/img/background.jpg);
+	overflow-x: hidden;
 }
 
 button,
@@ -22,16 +23,13 @@ a {
 }
 
 .navigation {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 66px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-row-gap: 0px;
+	padding: 66px 0;
 }
 
 .left-text {
@@ -64,9 +62,8 @@ a {
 	font-size: 28px;
 	font-size: 'Cormorant' sans-serif;
 	font-weight: 500;
-	margin-right: 300px;
-	margin-left: 300px;
 	color: #756b62;
+	text-align: center;
 }
 
 .text:nth-child(1) {
@@ -146,8 +143,10 @@ a {
 }
 
 .collection__items {
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
 }
 
 .collection__info button {
@@ -164,7 +163,11 @@ a {
 }
 
 .collection__item {
-	width: 470px;
+	width: 100%;
+}
+
+.collection__item img {
+	width: 100%;
 }
 
 .collection__info {
@@ -444,6 +447,7 @@ a {
 .footer {
 	background: url('./assets/img/20.jpg') no-repeat;
 	background-size: 100% auto;
+	background-size: cover;
 }
 
 .footer .container {
@@ -487,4 +491,88 @@ a {
 	justify-content: center;
 	border-radius: 100%;
 	border: 1px solid #9f968e;
+}
+
+@media (max-width: 1170px) {
+	.container {
+		/* width: 720px; */
+	}
+	.photos__content {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+	}
+	.photos__content img {
+		width: 100%;
+	}
+	.tagline h3 {
+		font-size: 130px;
+	}
+
+	.tagline h3 span {
+		margin: 0;
+	}
+
+	.tagline__img {
+		position: static;
+		transform: translate(0, 0);
+		max-width: 640px;
+		margin: 0 auto;
+		margin-top: 100px;
+	}
+
+	.softly__img-3,
+	.softly__img-1 {
+		display: none;
+	}
+
+	.softly__text {
+		color: white;
+		font-size: 70px;
+		text-align: center;
+	}
+
+	.history__img-3 {
+		display: none;
+	}
+	.history__img-1 {
+		top: 350px;
+	}
+	.history__img-2 {
+		position: static;
+		margin: 0 auto;
+		display: block;
+	}
+	.history__content,
+	.history__content h3,
+	.history__content p {
+		width: 100%;
+	}
+
+	.love__img-1 {
+		top: -10px;
+	}
+}
+@media (max-width: 740px) {
+	.container {
+		width: 95%;
+		padding: 0 20px;
+	}
+
+	.tagline h3 {
+		font-size: 110px;
+	}
+
+	.form__content {
+		flex-direction: column;
+	}
+
+	.form__text {
+		width: 100%;
+	}
+
+	.form__form {
+		width: 100%;
+	}
 }
